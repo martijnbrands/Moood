@@ -25,6 +25,7 @@
         <a-asset-item id="boom-material" src="assets/boom.mtl"></a-asset-item>
         <a-asset-item id="vis" src="assets/vis.obj"></a-asset-item>
         <a-asset-item id="vis-material" src="assets/vis.mtl"></a-asset-item>
+
         <a-asset-item id="landscape" src="assets/landscape.dae"></a-asset-item>
       </a-assets>
       
@@ -47,7 +48,7 @@
                      repeat="indefinite">
                       
         </a-animation>
-         <a-animation begin="click" attribute="position"
+         <a-animation attribute="position"
                      dur="5000"
                      direction="alternate"
                      from="-5 1.8 -5"
@@ -114,7 +115,7 @@
   
       </a-obj-model>
   <!--     <a-obj-model position="0 0 0" src="#landscape" mtl="#landscape-material"></a-obj-model> -->
-      <!-- <a-entity position="0 -1.5 0" collada-model="#landscape"></a-entity> -->
+      <a-entity position="-4 -1 14" collada-model="#landscape"></a-entity>
       <!-- <a-entity position="0 0.3 0" camera look-controls wasd-controls="acceleration: 30">
       </a-entity> -->
 
