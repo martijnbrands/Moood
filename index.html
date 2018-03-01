@@ -12,19 +12,25 @@
     <a-scene light="defaultLightsEnabled: false" inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
       <a-assets>
         <a-asset-item id="ground" src="assets/ground.jpg"></a-asset-item>
+
         <a-asset-item id="balloon" src="assets/balloon.obj"></a-asset-item>
         <a-asset-item id="balloon-material" src="assets/balloon.mtl"></a-asset-item>
+
         <a-asset-item id="stone" src="assets/stone.obj"></a-asset-item>
         <a-asset-item id="stone-material" src="assets/stone.mtl"></a-asset-item>
+
         <a-asset-item id="boom" src="assets/boom.obj"></a-asset-item>
         <a-asset-item id="boom-material" src="assets/boom.mtl"></a-asset-item>
-        <a-asset-item id="boom" src="assets/boom.dae"></a-asset-item>
+
         <a-asset-item id="olifant" src="assets/olifant.obj"></a-asset-item>
         <a-asset-item id="olifant-material" src="assets/olifant.mtl"></a-asset-item>
+
         <a-asset-item id="vis" src="assets/vis.obj"></a-asset-item>
         <a-asset-item id="vis-material" src="assets/vis.mtl"></a-asset-item>
 
-        <a-asset-item id="landscape" src="assets/landscape.dae"></a-asset-item>
+        <a-asset-item id="berg" src="assets/berg.dae"></a-asset-item>
+
+  
       </a-assets>
 
       <!--  Camera & Cursor -->
@@ -52,9 +58,9 @@
       <a-sky color="#f0f0f0"></a-sky>
 
       <!--  Stenen -->
-      <a-obj-model position="6 0 -2.56" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material" rotation="0 0 0" visible="true" material="" obj-model="obj:#stone;mtl:#stone-material"></a-obj-model>
-      <a-obj-model position="8.07 0 -1.01" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material" rotation="0 0 0" visible="true" material="" obj-model="obj:#stone;mtl:#stone-material"></a-obj-model>
-      <a-obj-model position="5.37 0 2.08" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material" rotation="0 0 0" visible="true" material="" obj-model="obj:#stone;mtl:#stone-material"></a-obj-model>
+      <a-obj-model position="6 0 -2.56" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material" rotation="0 0 0"></a-obj-model>
+      <a-obj-model position="8.07 0 -1.01" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material" rotation="0 0 0"></a-obj-model>
+      <a-obj-model position="5.37 0 2.08" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material" rotation="0 0 0"></a-obj-model>
 <!--       <a-obj-model position="2 0 4" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material"></a-obj-model>
       <a-obj-model position="4 0 5" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material"></a-obj-model>
       <a-obj-model position="6 0 2" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material"></a-obj-model> -->
@@ -132,18 +138,16 @@
                       
         </a-animation>
       </a-obj-model>
-  <!--     <a-obj-model position="0 0 0" src="#landscape" mtl="#landscape-material"></a-obj-model> -->
-      <!-- <a-entity position="-4 -1 14" collada-model="#landscape"></a-entity> -->
-      <!-- <a-entity position="0 0.3 0" camera look-controls wasd-controls="acceleration: 30">
-      </a-entity> -->
 
-    <!-- Checkpoints -->
+      <!--  Berg -->
+      <a-entity position="2 -4 30" collada-model="#berg" rotation="0 160 0" scale="20 20 20" visible="true"></a-entity>
+
+      <!-- Checkpoints -->
       <a-entity position="0 0 0">
         <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="2 0 -5.2" color="#906B47"></a-cylinder>
-        <!-- <a-obj-model checkpoint="offset: 0 1.6 0" position="2 0 -5.2" src="#boom" mtl="#boom-material"></a-obj-model> -->
         <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="3 0 0" color="#906B47"></a-cylinder>
         <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="-3 0 0" color="#906B47"></a-cylinder>
-        <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="-20 0 0" color="#906B47"></a-cylinder>
+        <a-cylinder checkpoint="offset:0 1.6 0" radius="1" height="0.1" position="2.08 0 6.7" color="#906B47"></a-cylinder>
       </a-entity>
 
     </a-scene>
