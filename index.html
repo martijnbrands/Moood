@@ -9,7 +9,7 @@
     <!-- <script src="https://rawgit.com/allanweir/aframe-touch-rotation-controls/master/dist/aframe-touch-rotation-controls.min.js"></script> -->  
   </head>
   <body>
-    <a-scene light="defaultLightsEnabled: false" inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+    <a-scene physics="debug: true" light="defaultLightsEnabled: false" inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
       <a-assets>
         <a-asset-item id="ground" src="assets/ground.jpg"></a-asset-item>
 
@@ -28,9 +28,7 @@
         <a-asset-item id="vis" src="assets/vis.obj"></a-asset-item>
         <a-asset-item id="vis-material" src="assets/vis.mtl"></a-asset-item>
 
-        <a-asset-item id="berg" src="assets/berg.dae"></a-asset-item>
-
-  
+        <a-asset-item id="berg" src="assets/berg.dae"></a-asset-item>  
       </a-assets>
 
       <!--  Camera & Cursor -->
@@ -49,24 +47,22 @@
       </a-entity>
       
       <!--  Licht -->
-      <a-entity light="type: ambient; color: #BBB"></a-entity>
+      <a-entity id="licht" light="type: ambient; color: #BBB"></a-entity>
 
       <!--  Environment -->
-      <a-entity environment="preset: default"></a-entity>
+      <a-entity id="environment" environment="preset: yavapai" ></a-entity>
+
 
       <!--  Lucht -->
-      <a-sky color="#f0f0f0"></a-sky>
+      <a-sky id="lucht" color="#f0f0f0"></a-sky>
 
       <!--  Stenen -->
-      <a-obj-model position="6 0 -2.56" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material" rotation="0 0 0"></a-obj-model>
-      <a-obj-model position="8.07 0 -1.01" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material" rotation="0 0 0"></a-obj-model>
-      <a-obj-model position="5.37 0 2.08" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material" rotation="0 0 0"></a-obj-model>
-<!--       <a-obj-model position="2 0 4" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material"></a-obj-model>
-      <a-obj-model position="4 0 5" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material"></a-obj-model>
-      <a-obj-model position="6 0 2" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material"></a-obj-model> -->
+      <a-obj-model id="steen" position="6 0 -2.56" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material" rotation="0 0 0"></a-obj-model>
+      <a-obj-model id="steen" position="8.07 0 -1.01" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material" rotation="0 0 0"></a-obj-model>
+      <a-obj-model id="steen" position="5.37 0 2.08" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material" rotation="0 0 0"></a-obj-model>
 
       <!--  Olifant -->
-      <a-obj-model position="-5 1.8 -5" scale="0.5 0.5 0.5" rotation="0 200 0" src="#olifant" mtl="#olifant-material"">
+      <a-obj-model id="olifant" position="-5 1.8 -5" scale="0.5 0.5 0.5" rotation="0 200 0" src="#olifant" mtl="#olifant-material"">
         <a-animation attribute="rotation"
                      dur="5000"
                      direction="alternate"
@@ -84,13 +80,13 @@
       </a-obj-model>
       
       <!--  Boomen -->
-      <a-obj-model position="5 -1 -1" src="#boom" mtl="#boom-material"></a-obj-model>
-      <a-obj-model position="7 -1 -5" src="#boom" mtl="#boom-material" rotation="0 45 0"></a-obj-model>
-      <a-obj-model position="7 -1 0" src="#boom" mtl="#boom-material"></a-obj-model>
-      <a-obj-model position="6.69 -1 3.43" src="#boom" mtl="#boom-material" rotation="0 45 0"></a-obj-model>
+      <a-obj-model id="boom" position="5 -1 -1" src="#boom" mtl="#boom-material"></a-obj-model>
+      <a-obj-model id="boom" position="7 -1 -5" src="#boom" mtl="#boom-material" rotation="0 45 0"></a-obj-model>
+      <a-obj-model id="boom" position="7 -1 0" src="#boom" mtl="#boom-material"></a-obj-model>
+      <a-obj-model id="boom" position="6.69 -1 3.43" src="#boom" mtl="#boom-material" rotation="0 45 0"></a-obj-model>
 
       <!--  Ballon -->
-      <a-obj-model src="#balloon" mtl="#balloon-material">
+      <a-obj-model id="ballon" src="#balloon" mtl="#balloon-material">
         <a-animation attribute="position"
                      dur="10000"
                      from="0 -1 -7"
@@ -106,7 +102,7 @@
       </a-obj-model>
 
       <!--  Vis -->
-      <a-obj-model rotation="90 0 0" src="#vis" mtl="#vis-material">
+      <a-obj-model id="vis" rotation="90 0 0" src="#vis" mtl="#vis-material">
         <a-animation attribute="position"
                      dur="5000"
                      direction="alternate"
@@ -117,7 +113,7 @@
       </a-obj-model>
 
       <!--  Vis -->
-      <a-obj-model rotation="90 0 0" src="#vis" mtl="#vis-material">
+      <a-obj-model id="vis" rotation="90 0 0" src="#vis" mtl="#vis-material">
         <a-animation attribute="position"
                      dur="5000"
                      direction="alternate"
@@ -130,7 +126,7 @@
       </a-obj-model>
 
       <!--  Vis -->
-      <a-obj-model rotation="90 0 0" src="#vis" mtl="#vis-material">
+      <a-obj-model id="vis" rotation="90 0 0" src="#vis" mtl="#vis-material">
         <a-animation attribute="position"
                      dur="5000"
                      direction="alternate"
@@ -143,14 +139,14 @@
       </a-obj-model>
 
       <!--  Berg -->
-      <a-entity position="2 -4 30" collada-model="#berg" rotation="0 160 0" scale="20 20 20" visible="true"></a-entity>
+      <a-entity id="berg" position="2 -4 30" collada-model="#berg" rotation="0 160 0" scale="20 20 20" visible="true"></a-entity>
 
       <!-- Checkpoints -->
       <a-entity position="0 0 0">
-        <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="2 0 -5.2" color="#906B47"></a-cylinder>
-        <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="3 0 0" color="#906B47"></a-cylinder>
-        <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="-3 0 0" color="#906B47"></a-cylinder>
-        <a-cylinder checkpoint="offset:0 1.6 0" radius="1" height="0.1" position="2.08 0 6.7" color="#906B47"></a-cylinder>
+        <a-cylinder id="checkpoint" checkpoint radius="1" height="0.1" position="2 0 -5.2" color="#906B47"></a-cylinder>
+        <a-cylinder id="checkpoint" checkpoint radius="1" height="0.1" position="3 0 0" color="#906B47"></a-cylinder>
+        <a-cylinder id="checkpoint" checkpoint radius="1" height="0.1" position="-3 0 0" color="#906B47"></a-cylinder>
+        <a-cylinder id="checkpoint" checkpoint radius="1" height="0.1" position="2.08 0 6.7" color="#906B47"></a-cylinder>
       </a-entity>
 
     </a-scene>
