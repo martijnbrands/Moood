@@ -23,6 +23,7 @@
   "dependencies": {
     "aframe-border-component": "^0.1.6",
     "aframe-extras": "^3.13.1",
-    "aframe-leap-hands": "^0.7.2"
+    "aframe-leap-hands": "^0.7.2",
+    "aframe-travel-node": "^1.0.0"
   }
 }

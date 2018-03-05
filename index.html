@@ -9,9 +9,50 @@
 
     <script src="https://rawgit.com/protyze/aframe-curve-component/master/dist/aframe-curve-component.min.js"></script>
     <script src="https://rawgit.com/protyze/aframe-alongpath-component/master/dist/aframe-alongpath-component.min.js"></script>
+    <script type="text" src="../js/script.js"></script>
     <!-- <script src="https://rawgit.com/allanweir/aframe-touch-rotation-controls/master/dist/aframe-touch-rotation-controls.min.js"></script> -->  
   </head>
+  <style>
+    #splash {
+      position: absolute;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      width: 200px;
+      height: 200px;
+      
+      margin: auto;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loading {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1rem solid rgba(255, 255, 255, 0.2);
+      border-top-color: red;
+      animation: spin 1s infinite linear;
+    }
+  </style>
   <body>
+    <div id="splash">
+      <div class="loading"></div>
+    </div>
     <a-scene physics="debug: true" light="defaultLightsEnabled: false" inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
       <a-assets>
         <a-asset-item id="ground" src="assets/ground.jpg"></a-asset-item>
@@ -31,7 +72,11 @@
         <a-asset-item id="vis" src="assets/vis.obj"></a-asset-item>
         <a-asset-item id="vis-material" src="assets/vis.mtl"></a-asset-item>
 
-        <a-asset-item id="berg" src="assets/berg.dae"></a-asset-item>  
+        <a-asset-item id="berg" src="assets/berg.dae"></a-asset-item> 
+
+        <a-asset-item id="eiland" src="assets/eiland.dae"></a-asset-item>  
+
+        <a-asset-item id="river" src="assets/river.ogg"></a-asset-item>  
       </a-assets>
 
       <!--  Camera & Cursor -->
@@ -72,7 +117,7 @@
       <a-obj-model id="steen" position="5.37 0 2.08" scale="0.5 0.5 0.5" src="#stone" mtl="#stone-material" rotation="0 0 0"></a-obj-model>
 
       <!--  Olifant -->
-      <a-obj-model id="olifant" position="-5 1.8 -5" scale="0.5 0.5 0.5" rotation="0 200 0" src="#olifant" mtl="#olifant-material"">
+      <a-obj-model id="olifant" position="-5 1.8 -5" scale="0.5 0.5 0.5" rotation="0 200 0" src="#olifant" mtl="#olifant-material">
         <a-animation attribute="rotation"
                      dur="5000"
                      direction="alternate"
@@ -150,6 +195,11 @@
 
       <!--  Berg -->
       <a-entity id="berg" position="2 -4 30" collada-model="#berg" rotation="0 160 0" scale="20 20 20" visible="true"></a-entity>
+      <a-sound loop="true" volume="0.5" src="src: url(assets/river.mp3)" autoplay="true" position="-4.34 3.9 10.38" rotation="0 0 0" scale="1 1 1" visible="true" sound="src:src: url(assets/river.mp3);autoplay:true"></a-sound>
+
+      <!--  Eiland -->
+      <!-- <a-entity id="eiland" position="2 10 10" collada-model="#eiland"></a-entity> -->
+
 
       <!-- Checkpoints -->
       <a-entity position="0 0 0">
