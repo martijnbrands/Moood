@@ -21,6 +21,6 @@ function checkActive() {
 	if(sphereSeen && boxSeen && octahedronSeen){
 	    console.log("Well done!");
 	    var sceneEl = document.querySelector('a-scene');
-		sceneEl.querySelector('#checkpoint').setAttribute("visible", "true");;
+		sceneEl.querySelector('#portal').setAttribute("visible", "true");
 	}
 }
