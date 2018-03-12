@@ -12,10 +12,66 @@
     <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
     <script src="https://rawgit.com/gasolin/aframe-href-component/master/index.js"></script>
     <script src="../js/script.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- <script src="https://rawgit.com/allanweir/aframe-touch-rotation-controls/master/dist/aframe-touch-rotation-controls.min.js"></script> -->  
   </head>
+  <style>
+    .splash-screen {
+      position: fixed;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      width: 100%;
+      
+      background: rgba(0,0,0,0.8);
+      color: #fff;
+
+      font-family: arial;
+
+      z-index: 1;
+    }
+    .icons{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 50px;
+      width: 50%;
+    }
+    .material-icons {
+      font-size: 126px;
+    }
+    button#start-btn{
+      width: 240px;
+      height: 40px;
+      color: #fff;
+      font-size: 18px;
+      text-transform: uppercase;
+      border: 0;
+      background: #b34093;
+    }
+  </style>
   <body>
-    <a-scene physics="debug: true" light="defaultLightsEnabled: false" inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+    <div class="splash-screen">
+      <h1>Moood</h1>
+      <h4>Ontspannings game in VR</h4>
+      <div class="icons">
+        <i class="material-icons">headset</i>
+        <i class="material-icons">3d_rotation</i>
+      </div>
+      
+      <button id="start-btn">Begin</button>
+    </div>
+    <a-scene light="defaultLightsEnabled: false" inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
       <a-assets>
 <!--         <a-asset-item id="ground" src="assets/ground.jpg"></a-asset-item>
 
@@ -56,7 +112,7 @@
       <!--  Environment -->
       <a-entity id="environment" environment="shadow:false;groundTexture:none;dressing:none;active:true;seed:17;skyColor:#87faf4;horizonColor:#b34093;lighting:distant;lightPosition:-0.72 0.53 0.97;fog:0.8;flatShading:false;playArea:1;ground:hills;groundYScale:20;groundColor:#326b6f;groundColor2:#c050a2;dressingAmount:300;dressingColor:#3cf7ed;dressingScale:0.2;dressingVariance:0.2 0.2 0.2;dressingUniformScale:true;dressingOnPlayArea:1;grid:none;gridColor:#239893;preset:dream"></a-entity>
 
-      <a-sound src="src: url(assets/sounds/omgeving.mp3)" autoplay="true" position="0 11 0" volume="0.7"></a-sound>
+      <a-sound src="src: url(assets/sounds/omgeving.mp3)" autoplay="true" loop="true" position="0 11 0" volume="0.7"></a-sound>
 
       <!--  Eiland -->
       <a-entity id="eiland" position="0 10 0" rotation="0 180 0" collada-model="#eiland"></a-entity>
