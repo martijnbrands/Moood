@@ -4,6 +4,12 @@ $( document ).ready(function() {
     });
 });
 
+AFRAME.registerComponent('auto-enter-vr', {
+  init: function () {
+    this.el.sceneEl.enterVR();
+  }
+});
+
 let sphereSeen = false;
 let boxSeen = false;
 let octahedronSeen = false;
