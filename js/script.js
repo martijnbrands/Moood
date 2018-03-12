@@ -1,19 +1,26 @@
+let sphereSeen = false;
+let boxSeen = false;
+let octahedronSeen = false;
 
-   	let seenObjectOne = false;
-	let seenObjectTwo = false;
+function sphereActive() {
+	sphereSeen = true;
+	checkActive();
+}
 
-	function addOne() {
-	    seenObjectOne = true;
-	    checkStatus();
+function boxActive() {
+	boxSeen = true;
+	checkActive();
+}
+
+function octahedronActive() {
+	octahedronSeen = true;
+	checkActive();
+}
+
+function checkActive() {
+	if(sphereSeen && boxSeen && octahedronSeen){
+	    console.log("Well done!");
+	    var sceneEl = document.querySelector('a-scene');
+		sceneEl.querySelector('#checkpoint').setAttribute("visible", "true");;
 	}
-
-	function addTwo() {
-	    seenObjectTwo = true;
-	    checkStatus();
-	}
-
-	function checkStatus() {
-	       if(seenObjectOne && seenObjectTwo){
-	        console.log("Well done!");
-	    }
-	}
+}

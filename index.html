@@ -13,9 +13,9 @@
     <!-- <script src="https://rawgit.com/allanweir/aframe-touch-rotation-controls/master/dist/aframe-touch-rotation-controls.min.js"></script> -->  
   </head>
   <body>
-    <a-scene id="world" physics="debug: true" light="defaultLightsEnabled: false" inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+    <a-scene physics="debug: true" light="defaultLightsEnabled: false" inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
       <a-assets>
-        <!-- <a-asset-item id="ground" src="assets/ground.jpg"></a-asset-item>
+<!--         <a-asset-item id="ground" src="assets/ground.jpg"></a-asset-item>
 
         <a-asset-item id="balloon" src="assets/balloon.obj"></a-asset-item>
         <a-asset-item id="balloon-material" src="assets/balloon.mtl"></a-asset-item>
@@ -30,10 +30,10 @@
         <a-asset-item id="olifant-material" src="assets/olifant.mtl"></a-asset-item>
 
         <a-asset-item id="vis" src="assets/vis.obj"></a-asset-item>
-        <a-asset-item id="vis-material" src="assets/vis.mtl"></a-asset-item>
+        <a-asset-item id="vis-material" src="assets/vis.mtl"></a-asset-item> -->
 
-        <a-asset-item id="berg" src="assets/berg.dae"></a-asset-item> 
- -->
+        <a-asset-item id="portal" src="assets/portal.jpg"></a-asset-item> 
+
         <a-asset-item id="eiland" src="assets/eiland.dae"></a-asset-item>  
 
         <!-- <a-asset-item id="river" src="assets/river.ogg"></a-asset-item> -->  
@@ -52,40 +52,13 @@
         </a-entity>
       </a-entity>
       
-      <!--  Licht -->
-     <!--  <a-entity id="licht" light="type: ambient; color: #BBB"></a-entity> -->
-
       <!--  Environment -->
       <a-entity id="environment" environment="shadow:false;groundTexture:none;dressing:none;active:true;seed:17;skyColor:#87faf4;horizonColor:#b34093;lighting:distant;lightPosition:-0.72 0.53 0.97;fog:0.8;flatShading:false;playArea:1;ground:hills;groundYScale:20;groundColor:#326b6f;groundColor2:#c050a2;dressingAmount:300;dressingColor:#3cf7ed;dressingScale:0.2;dressingVariance:0.2 0.2 0.2;dressingUniformScale:true;dressingOnPlayArea:1;grid:none;gridColor:#239893;preset:dream"></a-entity>
-
-      <!--  Lucht -->
-      <!-- <a-sky id="lucht" color="#f0f0f0"></a-sky> -->
 
       <!--  Eiland -->
       <a-entity id="eiland" position="0 10 0" rotation="0 180 0" collada-model="#eiland"></a-entity>
 
-     <!--  <a-text position="2 15 0" color="#906B47" value="Hello, World!" geometry="primitive:plane"></a-text> -->
-
-<!--       <a-box id="test" onclick="addOne()" position="-8 12 6" rotation="0 45 0" color="#4CC3D9">
-        <a-animation begin="fusing"
-                     attribute="opacity"
-                     dur="1000"
-                     delay="1500"
-                     direction="forwards"
-                     from="1"
-                     to="0">                
-        </a-animation>
-        <a-animation begin="fusing"
-                     attribute="scale"
-                     dur="1000"
-                     delay="1500"
-                     direction="forwards"
-                     from="1 1 1"
-                     to="0 0 0">                
-        </a-animation>
-      </a-box> -->
-
-      <a-sphere onclick="addTwo()" position="-8 14 6" material="shader:flat" geometry="segmentsHeight:4;segmentsWidth:10" radius="1" wireframe="true" rotation="0 45 0" color="#4CC3D9">
+      <a-sphere id="sphereSelect" onclick="sphereActive()" position="-8 14 6" material="shader:flat" geometry="segmentsHeight:4;segmentsWidth:10" radius="1" wireframe="true" rotation="0 45 0" color="#4CC3D9">
         <a-animation attribute="position"
                      dur="2000"
                      direction="alternate"
@@ -116,7 +89,7 @@
         </a-animation>
       </a-sphere>
     
-      <a-box onclick="addTwo()" position="9 14 -8" geometry="segmentsHeight:1;segmentsWidth:1" material="shader:flat" radius="1" wireframe="true" rotation="45 0 0" color="#4CC3D9">
+      <a-box id="boxSelect" onclick="boxActive()" position="9 14 -8" geometry="segmentsHeight:1;segmentsWidth:1" material="shader:flat" radius="1" wireframe="true" rotation="45 0 0" color="#4CC3D9">
         <a-animation attribute="position"
                      dur="2000"
                      direction="alternate"
@@ -147,7 +120,7 @@
         </a-animation>
       </a-box>
       
-      <a-octahedron position="-6 14 -9" radius="1" material="shader:flat" wireframe="true" rotation="0 90 0" color="#4CC3D9">    
+      <a-octahedron id="octahedronSelect" onclick="octahedronActive()" position="-6 14 -9" radius="1" material="shader:flat" wireframe="true" rotation="0 90 0" color="#4CC3D9">    
         <a-animation attribute="position"
                      dur="2000"
                      direction="alternate"
@@ -177,13 +150,14 @@
                      to="90 180 0">                
         </a-animation>
       </a-octahedron>
+      
 
       <!-- Checkpoints -->
       <a-entity position="0 0 0">
-        <a-cylinder id="checkpoint" checkpoint radius="1" height="0.1" position="2 0 -5.2" color="#906B47"></a-cylinder>
-        <a-cylinder id="checkpoint" checkpoint radius="1" height="0.1" position="3 0 0" color="#906B47"></a-cylinder>
+        <a-cylinder id="checkpoint" visible="false" radius="1" height="0.1" rotation="90 0 0" position="-2 14 -9" color="#906B47"><a-link href="index.html; image: #portal" ></a-link></a-cylinder>
+<!--         <a-cylinder id="checkpoint" checkpoint radius="1" height="0.1" position="3 0 0" color="#906B47"></a-cylinder>
         <a-cylinder id="checkpoint" checkpoint radius="1" height="0.1" position="-3 0 0" color="#906B47"></a-cylinder>
-        <a-cylinder id="checkpoint" checkpoint radius="1" height="0.1" position="2.08 0 6.7" color="#906B47"></a-cylinder>
+        <a-cylinder id="checkpoint" checkpoint radius="1" height="0.1" position="2.08 0 6.7" color="#906B47"></a-cylinder> -->
       </a-entity>
 
     </a-scene>
