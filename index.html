@@ -10,6 +10,7 @@
     <script src="https://rawgit.com/protyze/aframe-curve-component/master/dist/aframe-curve-component.min.js"></script>
     <script src="https://rawgit.com/protyze/aframe-alongpath-component/master/dist/aframe-alongpath-component.min.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+    <script src="https://rawgit.com/gasolin/aframe-href-component/master/index.js"></script>
     <script src="../js/script.js"></script>
     <!-- <script src="https://rawgit.com/allanweir/aframe-touch-rotation-controls/master/dist/aframe-touch-rotation-controls.min.js"></script> -->  
   </head>
@@ -33,8 +34,6 @@
         <a-asset-item id="vis" src="assets/vis.obj"></a-asset-item> -->
 
         <a-asset-item id="eiland" src="assets/models/eiland.dae"></a-asset-item>
-
-        <img id="portal" src="assets/portal.gif"></img>
 
         <a-asset-item id="penguin" src="assets/models/penguin.dae"></a-asset-item>    
 
@@ -156,8 +155,12 @@
       </a-octahedron>
 
       <!-- <a-entity id="penguin" position="2 11 -2" rotation="0 0 0" animation-mixer collada-model="#penguin"></a-entity> -->
-      
-      <a-link id="portal" visible="false" radius="1" height="0.1" rotation="0 0 0" position="-1.27 11.86 -4.32" rotation="90 0 0" href="balloon-world.html" title="Volgend level" image="assets/portal.gif" ></a-link>
+      <a-entity position="0 0 0">
+
+        <a-cylinder id="next-level" visible="false" radius="1" height="0.1" rotation="90 0 0" position="-1.16 12.25 -3.94" color="#906B47" href="balloon-world.html" material="shader:gif;src:url(assets/portal.gif)">
+        </a-cylinder>
+<!--         <a-link radius="1" height="0.1" rotation="0 0 0" position="-1.27 11.86 -4.32" rotation="90 0 0" href="balloon-world.html" title="Volgend level" image="assets/portal.gif" ></a-link>
+      </a-entity> -->
       <!-- Checkpoints -->
 <!--       <a-entity position="0 0 0">
         <a-cylinder id="checkpoint" checkpoint radius="1" height="0.1" position="3 0 0" color="#906B47"></a-cylinder>
