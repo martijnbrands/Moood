@@ -24,7 +24,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: space-around;
 
       top: 0;
       bottom: 0;
@@ -45,7 +45,6 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
-      margin-bottom: 50px;
       width: 50%;
     }
     .material-icons {
@@ -59,6 +58,7 @@
       text-transform: uppercase;
       border: 0;
       background: #b34093;
+      cursor: pointer;
     }
   </style>
   <body>
@@ -72,7 +72,7 @@
       
       <button id="start-btn">Begin</button>
     </div>
-    <a-scene auto-enter-vr light="defaultLightsEnabled: false" inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+    <a-scene light="defaultLightsEnabled: false" inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
       <a-assets>
 
         <a-asset-item id="eiland" src="assets/models/eiland.dae"></a-asset-item>
@@ -169,20 +169,20 @@
       
       <!--  Octahedron -->
       <a-octahedron id="octahedronSelect" onclick="octahedronActive()" position="-6 14 -9" radius="1" material="shader:flat" wireframe="true" rotation="0 90 0" color="#4CC3D9" sound="src:assets/sounds/select.mp3; on: click;volume:10">    
-        <a-animation id="animation" attribute="position"
+        <a-animation attribute="position"
                      dur="2000"
                      direction="alternate"
                      to="-6 14.2 -9"
                      repeat="indefinite">                
         </a-animation>
-        <a-animation id="animation" begin="fusing"
+        <a-animation begin="fusing"
                      attribute="color"
                      dur="1000"
                      delay="1500"
                      direction="forwards"
                      to="#ffffff">                
         </a-animation>
-        <a-animation id="animation" begin="fusing"
+        <a-animation begin="fusing"
                      attribute="scale"
                      dur="1000"
                      delay="1500"
@@ -190,7 +190,7 @@
                      from="1 1 1"
                      to="1.5 1.5 1.5">                
         </a-animation>
-        <a-animation id="animation" begin="fusing"
+        <a-animation begin="fusing"
                      attribute="rotation"
                      dur="1000"
                      delay="1500"

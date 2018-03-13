@@ -14,7 +14,7 @@
     <!-- <script src="https://rawgit.com/allanweir/aframe-touch-rotation-controls/master/dist/aframe-touch-rotation-controls.min.js"></script> -->  
   </head>
   <body>
-    <a-scene  auto-enter-vr light="defaultLightsEnabled: false" inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+    <a-scene light="defaultLightsEnabled: false" inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
       <a-assets>
 <!--         <a-asset-item id="ground" src="assets/ground.jpg"></a-asset-item>
 
@@ -35,6 +35,10 @@
         <a-asset-item id="ballonEiland" src="assets/models/ballonEiland.dae"></a-asset-item> 
 
         <a-asset-item id="ballonBlauw" src="assets/models/ballonBlauw.dae"></a-asset-item> 
+<!--         <a-asset-item id="ballonRood" src="assets/models/ballonRood.dae"></a-asset-item>  -->
+        <a-asset-item id="ballonOranje" src="assets/models/ballonOranje.dae"></a-asset-item> 
+        <a-asset-item id="ballonGroen" src="assets/models/ballonGroen.dae"></a-asset-item> 
+        <a-asset-item id="ballonGeel" src="assets/models/ballonGeel.dae"></a-asset-item> 
 
         <a-asset-item id="blokhut" src="assets/models/blokhut.dae"></a-asset-item>
 
@@ -57,13 +61,18 @@
       <!--  Environment -->
       <a-entity id="enviornment" environment="ground:canyon;dressing:none;groundTexture:none;seed:8;skyType:gradient;skyColor:#24b59f;horizonColor:#eff9b7;lighting:distant;lightPosition:-1.2 0.88 -0.55;fog:0.8;flatShading:false;playArea:1;groundYScale:4.18;groundColor:#937a24;groundColor2:#987d2e;dressingAmount:500;dressingColor:#888b1d;dressingScale:1;dressingVariance:10 10 10;dressingUniformScale:true;dressingOnPlayArea:0;grid:none;gridColor:#c5a543;shadow:false;preset:forest" position="0 0 0" rotation="0 0 0" scale="1 1 1" visible="true"></a-entity>
 
+
       <!--  Eiland -->
       <a-entity id="ballonEiland" position="0 10 0" rotation="0 0 0" collada-model="#ballonEiland"></a-entity>
-      
+
+      <a-sphere id="trigger" onclick="addBalloon()" position="0 12 0.6" radius="0.2"></a-sphere>
+
       <!--  Blokhut -->
-      <a-entity id="blokhut" position="1.8 11.16 -0.96" rotation="0 -90 0" collada-model="#blokhut"></a-entity>
+      <a-entity id="blokhutBalloons">
+        <a-entity id="blokhut" position="1.8 11.16 -1.92" rotation="0 -101.84 0" collada-model="#blokhut"></a-entity>
+      </a-entity>
       
-      <a-sphere onclick="addBalloon()" position="0 14 -2" radius="0.2"></a-sphere>
+      
 
       <!--  Blauwe Ballon -->
       <!-- <a-entity id="ballonBlauw" position="5 15 0" scale="0.2 0.2 0.2" rotation="0 45 0" collada-model="#ballonBlauw"></a-entity> -->
