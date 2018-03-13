@@ -68,6 +68,9 @@ function addBalloon() {
         animation.setAttribute("to", "0 1000 0")
         animation.setAttribute("dur", "50000")
         document.getElementById("blokhutBalloons").appendChild(animation)
+        document.getElementById("trigger").setAttribute("visible", "false");
+
+        document.getElementById("next-level").setAttribute("visible", "true");
     }
     else {
         let triggerPosX = Math.random() * 6 -3; // tussen 3 en -3 // tussen 3 en -3
@@ -79,8 +82,8 @@ function addBalloon() {
         let balloonPosZ = Math.random() * -1.75 + -1.25; // tussen -1.25 en -3
         console.log(balloonPosZ);
 
-        let balloons = ["#ballonBlauw", "#ballonOranje", "#ballonGroen", "#ballonGeel"]
-        let randomBalloon = balloons[Math.floor(Math.random() * 4)]
+        let balloons = ["#ballonBlauw", "#ballonRood", "#ballonOranje", "#ballonGroen", "#ballonGeel"]
+        let randomBalloon = balloons[Math.floor(Math.random() * 5)]
 
         balloon = document.createElement("a-entity")
         balloon.setAttribute("position", `${balloonPosX} ${balloonPosY} ${balloonPosZ}`)

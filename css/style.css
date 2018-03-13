@@ -1,0 +1,37 @@
+.splash-screen {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  font-family: arial;
+  z-index: 1;
+}
+.icons{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 50%;
+}
+.material-icons {
+  font-size: 126px;
+}
+button#start-btn{
+  width: 240px;
+  height: 40px;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  border: 0;
+  background: #b34093;
+  cursor: pointer;
+}

@@ -16,51 +16,8 @@
     <script src="js/script.js"></script>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/style.css">
   </head>
-  <style>
-    .splash-screen {
-      position: fixed;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-
-      width: 100%;
-      
-      background: rgba(0,0,0,0.8);
-      color: #fff;
-
-      font-family: arial;
-
-      z-index: 1;
-    }
-    .icons{
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      width: 50%;
-    }
-    .material-icons {
-      font-size: 126px;
-    }
-    button#start-btn{
-      width: 240px;
-      height: 40px;
-      color: #fff;
-      font-size: 18px;
-      text-transform: uppercase;
-      border: 0;
-      background: #b34093;
-      cursor: pointer;
-    }
-  </style>
   <body>
     <div class="splash-screen">
       <h1>Moood</h1>
@@ -76,6 +33,7 @@
       <a-assets>
 
         <a-asset-item id="eiland" src="assets/models/eiland.dae"></a-asset-item>
+        <a-asset-item id="ballonEiland" src="assets/models/ballonEiland.dae"></a-asset-item>
 
         <a-asset-item id="penguin" src="assets/models/penguin.dae"></a-asset-item>    
 
@@ -102,6 +60,26 @@
 
       <!--  Eiland -->
       <a-entity id="eiland" position="0 10 0" rotation="0 180 0" collada-model="#eiland"></a-entity>
+
+      <a-entity id="eiland" position="20 14 -7" rotation="0 0 0" collada-model="#eiland" scale="0.5 0.5 0.5" visible="true">
+        <a-animation attribute="position"
+                     dur="5000"
+                     direction="alternate"
+                     to="20 13.5 -7"
+                     repeat="indefinite">                
+        </a-animation>
+      </a-entity>
+
+
+
+      <a-entity id="eiland" position="-3 5 -30" rotation="0 0 0" collada-model="#eiland" scale="0.5 0.5 0.5" visible="true">
+        <a-animation attribute="position"
+                     dur="5000"
+                     direction="alternate"
+                     to="-3 5.3 -30"
+                     repeat="indefinite">                
+        </a-animation>
+      </a-entity>
       
       <!--  Sphere -->
       <a-sphere id="sphereSelect" onclick="sphereActive()" position="-8 14 6" material="shader:flat" geometry="segmentsHeight:4;segmentsWidth:10" radius="1" wireframe="true" rotation="0 45 0" color="#4CC3D9" sound="src:assets/sounds/select.mp3; on: click;volume:10">
