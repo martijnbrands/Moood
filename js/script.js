@@ -31,9 +31,8 @@ function octahedronActive() {
 
 function checkActive() {
 	if(sphereSeen && boxSeen && octahedronSeen){
-	    console.log("Well done!");
-	    let sceneEl = document.querySelector('a-scene');
-			sceneEl.querySelector('#next-level').setAttribute("visible", "true");
+	   document.getElementById("next-level").setAttribute("visible", "true");
+       document.getElementById("next-level").setAttribute("position", "-1.16 12.25 -3.94");
 	}
 }
 
@@ -71,6 +70,7 @@ function addBalloon() {
         document.getElementById("trigger").setAttribute("visible", "false");
 
         document.getElementById("next-level").setAttribute("visible", "true");
+        document.getElementById("next-level").setAttribute("position", "-1.27 11.86 -4.32");
     }
     else {
         let triggerPosX = Math.random() * 6 -3; // tussen 3 en -3 // tussen 3 en -3
@@ -80,7 +80,6 @@ function addBalloon() {
         let balloonPosX = Math.random() * 2 + 1; //tussen 1 en 3
         let balloonPosY = 16.5 // tussen 16 en 17.50
         let balloonPosZ = Math.random() * -1.75 + -1.25; // tussen -1.25 en -3
-        console.log(balloonPosZ);
 
         let balloons = ["#ballonBlauw", "#ballonRood", "#ballonOranje", "#ballonGroen", "#ballonGeel"]
         let randomBalloon = balloons[Math.floor(Math.random() * 5)]
