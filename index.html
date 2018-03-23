@@ -2,16 +2,12 @@
   <head>
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <script src="//unpkg.com/aframe-leap-hands/dist/aframe-leap-hands.min.js"></script>
-    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.2.0/dist/aframe-extras.min.js"></script>
-    <script src="https://unpkg.com/aframe-border-component@0.1.3/dist/aframe-border-component.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
     <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script> 
-    <script src="https://rawgit.com/protyze/aframe-curve-component/master/dist/aframe-curve-component.min.js"></script>
-    <script src="https://rawgit.com/protyze/aframe-alongpath-component/master/dist/aframe-alongpath-component.min.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
     <script src="https://rawgit.com/gasolin/aframe-href-component/master/index.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script src="js/script.js"></script>
 
@@ -20,7 +16,7 @@
   </head>
   <body>
     <div class="splash-screen">
-      <h1>Moood</h1>
+      <img src="assets/logo.png" alt="logo">
       <h4>Ontspannings game in VR</h4>
       <div class="icons">
         <i class="material-icons">headset</i>
@@ -35,7 +31,8 @@
         <a-asset-item id="eiland" src="assets/models/eiland.dae"></a-asset-item>
         <a-asset-item id="ballonEiland" src="assets/models/ballonEiland.dae"></a-asset-item>
 
-        <a-asset-item id="penguin" src="assets/models/penguin.dae"></a-asset-item>    
+        <!-- <a-asset-item id="penguin" src="assets/models/penguin.dae"></a-asset-item> -->   
+        <a-asset-item id="penguin" src="assets/models/penguin.fbx"></a-asset-item>     
 
       </a-assets>
 
@@ -187,6 +184,7 @@
         <a-cylinder id="checkpoint" checkpoint radius="1" height="0.1" position="-3 0 0" color="#906B47"></a-cylinder>
         <a-cylinder id="checkpoint" checkpoint radius="1" height="0.1" position="2.08 0 6.7" color="#906B47"></a-cylinder>
       </a-entity> -->
+      <a-entity fbx-model="src: url(assets/models/penguin.fbx);"></a-entity>
 
     </a-scene>
 

@@ -42,27 +42,8 @@ function checkActive() {
 let numBalloons = 0
 
 function addBalloon() {
-    // for (var i = 0; i < 25; i++) {
-    //     let triggerPosX = Math.random() * 6 -3; // tussen 3 en -3 // tussen 3 en -3
-    //     let triggerPosY = 12 // staat vast
-    //     let triggerPosZ = Math.floor(Math.random() * 3) + 0.6; // tussen 0.6 en 3
-
-    //     let balloonPosX = Math.random() * 2 + 1; //tussen 1 en 3
-    //     let balloonPosY = 16.5 // tussen 16 en 17.50
-    //     let balloonPosZ = Math.random() * -1.75 + -1.25; // tussen -1.25 en -3
-    //     console.log(balloonPosZ);
-
-    //     let balloons = ["#ballonBlauw", "#ballonOranje", "#ballonGroen", "#ballonGeel"]
-    //     let randomBalloon = balloons[Math.floor(Math.random() * 4)]
-
-    //     balloon = document.createElement("a-entity")
-    //     balloon.setAttribute("position", `${balloonPosX} ${balloonPosY} ${balloonPosZ}`)
-    //     balloon.setAttribute("collada-model", randomBalloon)
-
-    //     document.getElementById("blokhutBalloons").appendChild(balloon)
-    // }
-    if (numBalloons == 9) {
-        let animation=document.createElement("a-animation")
+    if (numBalloons == 3) {
+        let animation = document.createElement("a-animation")
         animation.setAttribute("attribute", "position")
         animation.setAttribute("to", "0 1000 0")
         animation.setAttribute("dur", "50000")
@@ -73,25 +54,22 @@ function addBalloon() {
         document.getElementById("next-level").setAttribute("position", "-1.27 11.86 -4.32");
     }
     else {
-        let triggerPosX = Math.random() * 6 -3; // tussen 3 en -3 // tussen 3 en -3
-        let triggerPosY = 12 // staat vast
-        let triggerPosZ = Math.floor(Math.random() * 3) + 0.6; // tussen 0.6 en 3
+        let triggerPosition = ["0, 11.80 0.30", "-2, 11.28, -1.30", "2.5, 11.3 0", "3, 11.26, -0.90", "-1.85, 11.28, -2.10", "-4, 10.81, -1.20"]
 
-        let balloonPosX = Math.random() * 2 + 1; //tussen 1 en 3
-        let balloonPosY = 16.5 // tussen 16 en 17.50
-        let balloonPosZ = Math.random() * -1.75 + -1.25; // tussen -1.25 en -3
+        let balloonPosition = ["2.60, 16.50, -0.70", "3.00, 16.50, -2.76", "1.03, 16.50, -3.13", "0.58, 16.50, -1.09"]
 
         let balloons = ["#ballonBlauw", "#ballonRood", "#ballonOranje", "#ballonGroen", "#ballonGeel"]
-        let randomBalloon = balloons[Math.floor(Math.random() * 5)]
+       
+        let randomBalloon = balloons[Math.floor(Math.random() * 4)]
 
         balloon = document.createElement("a-entity")
-        balloon.setAttribute("position", `${balloonPosX} ${balloonPosY} ${balloonPosZ}`)
+        balloon.setAttribute("position", balloonPosition[Math.floor(Math.random() * 4)])
         balloon.setAttribute("collada-model", randomBalloon)
 
         document.getElementById("blokhutBalloons").appendChild(balloon)
 
         numBalloons += 1
 
-        document.getElementById("trigger").setAttribute("position", `${triggerPosX} ${triggerPosY} ${triggerPosZ}`)
+        document.getElementById("trigger").setAttribute("position", triggerPosition[Math.floor(Math.random() * 4)])
     }
 }
