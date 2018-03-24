@@ -16,23 +16,24 @@
   </head>
   <body>
     <div class="splash-screen">
-      <img src="assets/logo.png" alt="logo">
-      <h4>Ontspannings game in VR</h4>
+      <img class="logo" src="assets/logo.png" alt="logo">
+      <h2>Ontspannings game in VR</h2>
       <div class="icons">
         <i class="material-icons">headset</i>
-        <i class="material-icons">3d_rotation</i>
+        <p>Beste ervaring met koptelefoon</p>
       </div>
       
       <button id="start-btn">Begin</button>
+    </div>
+    <div class="instruction-screen">
+      <h4>Ontdek door gebruik te maken van de cursor</h4>
+      <img class="cursor" src="assets/cursor.png" alt="cursor">
     </div>
     <a-scene light="defaultLightsEnabled: false" inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
       <a-assets>
 
         <a-asset-item id="eiland" src="assets/models/eiland.dae"></a-asset-item>
-        <a-asset-item id="ballonEiland" src="assets/models/ballonEiland.dae"></a-asset-item>
-
-        <!-- <a-asset-item id="penguin" src="assets/models/penguin.dae"></a-asset-item> -->   
-        <a-asset-item id="penguin" src="assets/models/penguin.fbx"></a-asset-item>     
+        <a-asset-item id="ballonEiland" src="assets/models/ballonEiland.dae"></a-asset-item>   
 
       </a-assets>
 
@@ -43,7 +44,7 @@
         <a-entity cursor="fuse: true;"
                   position="0 0 -1"
                   geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;"
-                  material="color: yellow; shader: flat;">
+                  material="color: #FFEB3B; shader: flat;">
                   <a-animation begin="click" easing="ease-in" attribute="scale" dur="150" fill="forwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
                   <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
         </a-entity>
@@ -57,7 +58,8 @@
 
       <!--  Eiland -->
       <a-entity id="eiland" position="0 10 0" rotation="0 180 0" collada-model="#eiland"></a-entity>
-
+      
+      <!-- Floating Eiland -->
       <a-entity id="eiland" position="20 14 -7" rotation="0 0 0" collada-model="#eiland" scale="0.5 0.5 0.5" visible="true">
         <a-animation attribute="position"
                      dur="5000"
@@ -66,9 +68,8 @@
                      repeat="indefinite">                
         </a-animation>
       </a-entity>
-
-
-
+      
+      <!-- Floating Eiland -->
       <a-entity id="eiland" position="-3 5 -30" rotation="0 0 0" collada-model="#eiland" scale="0.5 0.5 0.5" visible="true">
         <a-animation attribute="position"
                      dur="5000"
@@ -175,7 +176,7 @@
       </a-octahedron>
       
       <!--  Portal -->
-      <a-cylinder id="next-level" visible="false" radius="1" height="0.1" rotation="90 0 0" position="-1.16 0 -3.94" href="balloon-world.html" material="shader:gif;src:url(assets/portal.gif)">
+      <a-cylinder id="next-level" visible="true" radius="1" height="0.1" rotation="90 0 0" position="-1.16 0 -3.94" href="balloon-world.html" material="shader:gif;src:url(assets/portal.gif)">
       </a-cylinder>
 
       <!-- Checkpoints -->
@@ -184,7 +185,6 @@
         <a-cylinder id="checkpoint" checkpoint radius="1" height="0.1" position="-3 0 0" color="#906B47"></a-cylinder>
         <a-cylinder id="checkpoint" checkpoint radius="1" height="0.1" position="2.08 0 6.7" color="#906B47"></a-cylinder>
       </a-entity> -->
-      <a-entity fbx-model="src: url(assets/models/penguin.fbx);"></a-entity>
 
     </a-scene>
 

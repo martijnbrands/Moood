@@ -13,14 +13,22 @@
   background: rgba(0,0,0,0.8);
   color: #fff;
   font-family: arial;
-  z-index: 1;
+  z-index: 2;
+}
+
+.logo{
+  width: 100%;
+  height: auto;
+  padding: 0 30px;
+  max-width: 250px;
 }
 .icons{
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 50%;
+  text-align: center;
 }
 .material-icons {
   font-size: 126px;
@@ -30,8 +38,33 @@ button#start-btn{
   height: 40px;
   color: #fff;
   font-size: 18px;
+  font-weight: bold;
   text-transform: uppercase;
   border: 0;
   background: #b34093;
   cursor: pointer;
+}
+
+.instruction-screen {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  font-family: arial;
+  z-index: 1;
+  
+
+  display: none;
+}
+.cursor{
+  padding-bottom: 55px;
 }

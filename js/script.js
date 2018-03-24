@@ -1,6 +1,7 @@
 $( document ).ready(function() {
     $("#start-btn").click(function(){
         $(".splash-screen").fadeOut( "slow" );
+        $(".instruction-screen").css("display", "flex").fadeIn('slow').delay(3000).fadeOut('slow');
     });
 });
 
@@ -43,11 +44,14 @@ let numBalloons = 0
 
 function addBalloon() {
     if (numBalloons == 3) {
+        document.getElementById("blokhutBalloons").setAttribute("sound", "src:assets/sounds/floating_sound.mp3;volume:25")
+        
         let animation = document.createElement("a-animation")
         animation.setAttribute("attribute", "position")
         animation.setAttribute("to", "0 1000 0")
         animation.setAttribute("dur", "50000")
         document.getElementById("blokhutBalloons").appendChild(animation)
+
         document.getElementById("trigger").setAttribute("visible", "false");
 
         document.getElementById("next-level").setAttribute("visible", "true");
