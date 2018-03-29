@@ -1,5 +1,6 @@
 # Moood
 
+[<img src="http://moood.martijnbrands.com/assets/logo.png">]
 Moood is een virtual reality game om te kunnen ontspannen. 
 Gemaakt met [A-Frame](https://aframe.io/) een boilerplate om WebVR scenes te maken.
 
