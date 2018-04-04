@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script> 
+    <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+    <script src="https://rawgit.com/gasolin/aframe-href-component/master/index.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="js/script.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <a-scene id="world" inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+      <a-assets>
+
+      </a-assets>
+
+      <!--  Camera & Cursor -->
+      <a-entity position="0 0 0" camera="userHeight: 1.3"
+            universal-controls="movementControls: checkpoint"
+            checkpoint-controls="mode: teleport">
+      </a-entity>
+
+      <a-sky color="#212121"></a-sky>
+      <a-image src="#hartbeat_slow"></a-image>
+      <a-box material="shader:gif;src:url(assets/hartbeat_slow.gif)" scale="1 1 1"></a-box>
+      <a-plane color="#fff" height="10" width="10" rotation="-90 0 0"></a-plane>
+      <a-entity id="text" text="value:Kijk naar de vormen.;height:0;color:#fff;anchor:center;zOffset:0" position="0 11.29 -1" rotation="-90 0 0" scale="1 1 1" visible="true"></a-entity>
+      
+
+    </a-scene>
+
+    
+  </body>
+</html>
+

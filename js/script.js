@@ -34,6 +34,7 @@ function checkActive() {
 	if(sphereSeen && boxSeen && octahedronSeen){
 	   document.getElementById("next-level").setAttribute("visible", "true");
        document.getElementById("next-level").setAttribute("position", "-1.16 12.25 -3.94");
+
 	}
 }
 
@@ -111,6 +112,6 @@ function snowtreeActive() {
 
 function checkAll() {
     if(pinguinSeen && snowmanSeen && snowtreeSeen ){
-       console.log("Helloo");
+        window.open("/index.html","_self")
     }
 }
