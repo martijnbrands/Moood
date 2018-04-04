@@ -41,12 +41,11 @@
       <a-entity position="0 11 4" camera="userHeight: 1.3"
             universal-controls="movementControls: checkpoint"
             checkpoint-controls="mode: teleport">
-        <a-entity cursor="fuse: true;"
+        <a-entity cursor
                   position="0 0 -1"
                   geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;"
                   material="color: yellow; shader: flat;">
-                  <a-animation begin="fusing" easing="ease-in" attribute="scale" dur="150" fill="forwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
-                  <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
+                  <a-animation begin="click" easing="ease-in" attribute="scale" dur="300" fill="forwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
         </a-entity>
       </a-entity>
 
@@ -109,7 +108,7 @@
       <a-entity id="dennenboom" position="2.74 12.03 -3.89" collada-model="#dennenboom" rotation="0 0 0" visible="true" scale="1.7 1.7 1.7"></a-entity>
 
       <!-- Checkpoints -->
-      <a-cylinder id="next-level" visible="false" radius="1" height="0.1" rotation="90 0 0" position="-1.9 0 0.73" href="snow-world.html" material="transparent:true;shader:gif;src:url(assets/portal.gif)" scale="1 1 1" geometry="primitive:cylinder;radius:1;height:0.1">
+      <a-cylinder id="next-level" visible="false" radius="1" height="0.1" rotation="90 45 0" position="-2.12 0 -1.14" href="snow-world.html" material="transparent:true;shader:gif;src:url(assets/portal.gif)" scale="1 1 1" geometry="primitive:cylinder;radius:1;height:0.1">
       </a-cylinder>
     </a-scene>
 

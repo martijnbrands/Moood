@@ -83,7 +83,7 @@ function levelComplete() {
     document.getElementById("trigger").setAttribute("visible", "false");
 
     document.getElementById("next-level").setAttribute("visible", "true");
-    document.getElementById("next-level").setAttribute("position", "-1.27 11.86 -4.32");
+    document.getElementById("next-level").setAttribute("position", "-2.12 12.39 -1.14");
 }
 
 
@@ -93,21 +93,18 @@ let snowtreeSeen = false;
 
 function pinguinActive() {
     pinguinSeen = true;
-    console.log("Pinguin Seen");
     document.getElementById("pinguin_image").setAttribute("src", "#pinguin_color");
     checkAll();
 }
 
 function snowmanActive() {
     snowmanSeen = true;
-    console.log("Snowman Seen");
     document.getElementById("sneeuwpop_image").setAttribute("src", "#sneeuwpop_color");
     checkAll();
 }
 
 function snowtreeActive() {
     snowtreeSeen = true;
-    console.log("Snowtree Seen");
     document.getElementById("kerstboom_image").setAttribute("src", "#kerstboom_color");
     checkAll();
 }
