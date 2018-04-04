@@ -68,6 +68,10 @@
         </a-animation>
       </a-entity>
       
+
+      <!-- Tekt   -->
+      <a-entity id ="text" text="value:Blaas de ballonnen op door naar de gasfles te kijken.;height:0;color:#fff;anchor:center;zOffset:0;wrapCount:25" position="0 11.2 2.5" rotation="-90 0 0" scale="1 1 1" visible="true"></a-entity>
+      
       <!--  Heliumtank -->
       <a-cylinder id="trigger" onclick="addBalloon()" color="#fff" opacity="0" height="0.7" radius="0.15" position="0 11.8 0.6" scale="1 1 1" sound="src:assets/sounds/balloon_inflation.mp3; on: click;volume:20">
         <a-entity id="heliumtank" visible="true" scale="0.1 0.1 0.1" position="0 -0.1 0.6" collada-model="#heliumtank"></a-entity>
@@ -105,7 +109,7 @@
       <a-entity id="dennenboom" position="2.74 12.03 -3.89" collada-model="#dennenboom" rotation="0 0 0" visible="true" scale="1.7 1.7 1.7"></a-entity>
 
       <!-- Checkpoints -->
-      <a-cylinder id="next-level" visible="false" radius="1" height="0.1" rotation="90 0 0" position="-1.27 0 -4.32" href="snow-world.html" material="shader:gif;src:url(assets/portal.gif)">
+      <a-cylinder id="next-level" visible="true" radius="1" height="0.1" rotation="90 0 0" position="-1.9 12.31 0.73" href="snow-world.html" material="transparent:true;shader:gif;src:url(assets/portal.gif)" scale="1 1 1" geometry="primitive:cylinder;radius:1;height:0.1">
       </a-cylinder>
     </a-scene>
 
