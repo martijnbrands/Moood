@@ -88,15 +88,29 @@ function levelComplete() {
 
 
 let pinguinSeen = false;
+let snowmanSeen = false;
+let snowtreeSeen = false;
 
 function pinguinActive() {
     pinguinSeen = true;
-    console.log("pinguin");
+    console.log("Pinguin Seen");
+    checkAll();
+}
+
+function snowmanActive() {
+    snowmanSeen = true;
+    console.log("Snowman Seen");
+    checkAll();
+}
+
+function snowtreeActive() {
+    snowtreeSeen = true;
+    console.log("Snowtree Seen");
     checkAll();
 }
 
 function checkAll() {
-    if(pinguinSeen){
+    if(pinguinSeen && snowmanSeen && snowtreeSeen ){
        console.log("Helloo");
     }
 }

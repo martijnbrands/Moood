@@ -21,7 +21,7 @@
   <body>
 
 
-    <a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+    <a-scene auto-enter-vr inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
       <a-assets>
         <a-asset-item id="sneeuwEiland" src="assets/models/sneeuwEiland.dae"></a-asset-item> 
 
@@ -68,13 +68,17 @@
       <a-entity id="sneeuwEiland" position="0 10 0" rotation="0 45 0" collada-model="#sneeuwEiland"></a-entity>
 
       <!--  Sneeuwpop -->
-      <a-entity id="sneeuwpop" onclick="snowmanActive()" position="-8.37 10.35 2.26" scale="0.15 0.15 0.15" rotation="0 0 0" collada-model="#sneeuwpop" visible="true"></a-entity>
+      <a-cylinder id="pinguin_cylinder" color="#fff" opacity="1" height="0.7" radius="0.15" scale="1 1 1" position="0 0 -2.68" rotation="0 0 0" visible="true" material="color:#fff;opacity:1" geometry="primitive:cylinder;height:0.7;radius:0.15">
+        <a-entity id="sneeuwpop" onclick="snowmanActive()" position="-8.37 10.35 4.94" scale="0.15 0.15 0.15" rotation="0 0 0" collada-model="#sneeuwpop" visible="true"></a-entity>
+      </a-cylinder>
       
       <!--  Pinguin -->
-      <a-entity id="pinguin" fuse="true" onclick="pinguinActive()" position="-0.35 10.66 6.37" scale="0.3 0.3 0.3" collada-model="#pinguin" visible="true" rotation="0 -45 -3.745532930298764">
+      <a-cylinder id="pinguin_cylinder" color="#fff" opacity="1" height="0.7" radius="0.15" scale="1 1 1" position="0 0 -2.68" rotation="0 0 0" visible="true" material="color:#fff;opacity:1" geometry="primitive:cylinder;height:0.7;radius:0.15">
+       <a-entity id="pinguin" onclick="pinguinActive()" position="-0.35 10.66 6.37" scale="0.3 0.3 0.3" collada-model="#pinguin" visible="true" rotation="0 -45 -3.745532930298764">
         <a-animation attribute="rotation" dur="500" direction="alternate" from="0 -45 -4" to="0 -45 4" repeat="indefinite">                
         </a-animation>
       </a-entity>
+      </a-cylinder>
       
       <!--  Sneeuwboom -->
       <a-entity id="sneeuwboom" position="-7.38 10.28 3.88" collada-model="#sneeuwboom" scale="0.5 0.5 0.5" rotation="0 0 0" visible="true"></a-entity>
@@ -98,7 +102,9 @@
 
       
       <!--  Sneeuwboom lights -->
-      <a-entity id="sneeuwboom_lights" onclick="snowTreeActive()" position="6.71 10.26 -5.14" collada-model="#sneeuwboom_lights" scale="0.4 0.4 0.4" rotation="0 0 0" visible="true"></a-entity>
+      <a-cylinder id="pinguin_cylinder" color="#fff" opacity="1" height="0.7" radius="0.15" scale="1 1 1" position="0 0 -2.68" rotation="0 0 0" visible="true" material="color:#fff;opacity:1" geometry="primitive:cylinder;height:0.7;radius:0.15">
+        <a-entity id="sneeuwboom_lights" onclick="snowtreeActive()" position="6.71 10.28 -1.98" collada-model="#sneeuwboom_lights" scale="0.4 0.4 0.4" rotation="0 0 0" visible="true"></a-entity>
+      </a-cylinder>
       
 
       <a-image src="#kerstboom_black"></a-image>
@@ -109,6 +115,18 @@
        <!-- Checkpoints -->
       <a-entity position="0 10 0">
         <a-sphere id="checkpoint" checkpoint="" radius="0.1" position="-1.29 1.35 5.73" color="red" rotation="0 0 0" scale="1 1 1" visible="true" geometry="primitive:sphere;radius:0.1"></a-sphere>
+
+        <a-sphere id="checkpoint" checkpoint="" radius="0.1" position="0 1.35 8" color="red" rotation="0 0 0" scale="1 1 1" visible="true" geometry="primitive:sphere;radius:0.1" material="color:red"></a-sphere>
+
+        <a-sphere id="checkpoint" checkpoint="" radius="0.1" position="-5.41 1.35 5.45" color="red" rotation="0 0 0" scale="1 1 1" visible="true" geometry="primitive:sphere;radius:0.1" material="color:red"></a-sphere>
+
+        <a-sphere id="checkpoint" checkpoint="" radius="0.1" position="2.36 6.58 -1.57" color="red" rotation="0 0 0" scale="1 1 1" visible="true" geometry="primitive:sphere;radius:0.1" material="color:red"></a-sphere>
+
+        <a-sphere id="checkpoint" checkpoint="" radius="0.1" position="4.46 5.01 3.27" color="red" rotation="0 0 0" scale="1 1 1" visible="true" geometry="primitive:sphere;radius:0.1" material="color:red"></a-sphere>
+
+        <a-sphere id="checkpoint" checkpoint="" radius="0.1" position="4.25 1.35 -6.76" color="red" rotation="0 0 0" scale="1 1 1" visible="true" geometry="primitive:sphere;radius:0.1" material="color:red"></a-sphere>
+
+        <a-sphere id="checkpoint" checkpoint="" radius="0.1" position="-6.56 1.35 2.12" color="red" rotation="0 0 0" scale="1 1 1" visible="true" geometry="primitive:sphere;radius:0.1" material="color:red"></a-sphere>
         <!-- <a-cylinder id="checkpoint" checkpoint radius="1" height="0.1" position="-3 0 0" color="#906B47"></a-cylinder>
         <a-cylinder id="checkpoint" checkpoint radius="1" height="0.1" position="2.08 0 6.7" color="#906B47"></a-cylinder> -->
       </a-entity>
