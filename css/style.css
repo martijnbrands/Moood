@@ -68,3 +68,22 @@ button#start-btn{
 .cursor{
   padding-bottom: 55px;
 }
+
+.objects-found{
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  width: 200px;
+  height: 70px;
+  z-index: 2147483647;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}

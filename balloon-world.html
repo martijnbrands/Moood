@@ -46,12 +46,12 @@
                   geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;"
                   material="color: yellow; shader: flat;">
                   <a-animation begin="fusing" easing="ease-in" attribute="scale" dur="150" fill="forwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
-                  <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
+                  <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
         </a-entity>
       </a-entity>
 
       <!--  Environment Sound -->
-      <a-sound src="src: url(assets/sounds/campfire_sound.mp3)" autoplay="true" loop="true" position="0 11 4" volume="30"></a-sound>
+      <a-sound src="src: url(assets/sounds/ballon_omgeving.mp3)" autoplay="true" loop="true" position="0 11 4" volume="0.1"></a-sound>
       
       <!--  Environment -->
       <a-entity id="enviornment" environment="skyType:gradient;horizonColor:#ED342F;skyColor:#ED772F;active:true;seed:8;lighting:point;fog:0.8;flatShading:false;playArea:1;ground:canyon;groundYScale:4.18;groundTexture:none;groundColor:#6E4B84;dressing:none;dressingAmount:500;dressingColor:#888b1d;dressingScale:1;dressingVariance:10 10 10;dressingUniformScale:true;dressingOnPlayArea:0;grid:none;gridColor:#c5a543;shadow:false;preset:forest" position="0 0 0" rotation="0 0 0" scale="1 1 1" visible="true"></a-entity>
@@ -75,12 +75,11 @@
 
       <!--  Campfire light -->
       <a-entity id="fireLight" position="2.41 13.48 0.88" rotation="-77.349 0 0" light="intensity:2.75;penumbra:1;color:#ff8000;type:spot" scale="1 1 1" visible="true">
-          
-             <a-animation attribute="light.intensity" repeat="indefinite" direction="alternate" dur="2000" to="3.5"></a-animation>
+        <a-animation attribute="light.intensity" repeat="indefinite" direction="alternate" dur="2000" to="3.5"></a-animation>
       </a-entity>
     
       <!--  Campfire -->
-      <a-entity id="fire" scale="0.2 0.2 0.2" position="2.41 11.31 0.28" collada-model="#fire" rotation="0 0 0" visible="true"></a-entity>
+      <a-entity id="fire" scale="0.2 0.2 0.2" position="2.41 11.31 0.28" collada-model="#fire" rotation="0 0 0" visible="true" sound="src:assets/sounds/campfire_sound.mp3;autoplay:true;loop:true;volume:10"></a-entity>
 
       <!--  Blokhut -->
       <a-entity id="blokhutBalloons">

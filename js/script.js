@@ -85,3 +85,18 @@ function levelComplete() {
     document.getElementById("next-level").setAttribute("visible", "true");
     document.getElementById("next-level").setAttribute("position", "-1.27 11.86 -4.32");
 }
+
+
+let pinguinSeen = false;
+
+function pinguinActive() {
+    pinguinSeen = true;
+    console.log("pinguin");
+    checkAll();
+}
+
+function checkAll() {
+    if(pinguinSeen){
+       console.log("Helloo");
+    }
+}
